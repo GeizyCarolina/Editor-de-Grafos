@@ -38,7 +38,12 @@ namespace Editor_de_Grafos
 
         private void BtGrafoUnicursal_Click(object sender, EventArgs e)
         {
+            // IS UNICURSAL
 
+            if(g.isUnicursal())
+                MessageBox.Show("O grafo e Unicursal!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("O grafo não e Unicursal!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtBuscaProfundidade_Click(object sender, EventArgs e)
