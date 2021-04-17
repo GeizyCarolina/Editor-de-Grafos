@@ -6,12 +6,13 @@ namespace Editor_de_Grafos
 {
     interface iGrafo
     {
-        bool isEuleriano();
-        bool isUnicursal();
-        string paresOrdenados();
-        void completarGrafo();
+        bool isEuleriano(); // ok
+        bool isUnicursal(); // ok
+        string paresOrdenados(); // ok
+        void completarGrafo(); // ok
+
         void profundidade(int v);
-        void largura(int v);
+        void largura(int v); // ok
         void AGM(int v);
         void caminhoMinimo(int i, int j);
         void numeroCromatico();

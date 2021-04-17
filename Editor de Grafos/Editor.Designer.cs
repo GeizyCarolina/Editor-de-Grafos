@@ -53,6 +53,7 @@ namespace Editor_de_Grafos
             this.BtSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.OPFile = new System.Windows.Forms.OpenFileDialog();
             this.SVFile = new System.Windows.Forms.SaveFileDialog();
+            this.profundidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.g = new Editor_de_Grafos.Grafo();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +88,7 @@ namespace Editor_de_Grafos
             // 
             this.BtNovo.Name = "BtNovo";
             this.BtNovo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.BtNovo.Size = new System.Drawing.Size(180, 22);
+            this.BtNovo.Size = new System.Drawing.Size(146, 22);
             this.BtNovo.Text = "Novo";
             this.BtNovo.Click += new System.EventHandler(this.BtNovo_Click);
             // 
@@ -95,7 +96,7 @@ namespace Editor_de_Grafos
             // 
             this.BtAbrir.Name = "BtAbrir";
             this.BtAbrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.BtAbrir.Size = new System.Drawing.Size(180, 22);
+            this.BtAbrir.Size = new System.Drawing.Size(146, 22);
             this.BtAbrir.Text = "Abrir";
             this.BtAbrir.Click += new System.EventHandler(this.BtAbrir_Click);
             // 
@@ -103,20 +104,20 @@ namespace Editor_de_Grafos
             // 
             this.BtSalvar.Name = "BtSalvar";
             this.BtSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.BtSalvar.Size = new System.Drawing.Size(180, 22);
+            this.BtSalvar.Size = new System.Drawing.Size(146, 22);
             this.BtSalvar.Text = "Salvar";
             this.BtSalvar.Click += new System.EventHandler(this.BtSalvar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // BtSair
             // 
             this.BtSair.Name = "BtSair";
             this.BtSair.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.BtSair.Size = new System.Drawing.Size(180, 22);
+            this.BtSair.Size = new System.Drawing.Size(146, 22);
             this.BtSair.Text = "Sair";
             this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
             // 
@@ -127,6 +128,7 @@ namespace Editor_de_Grafos
             this.BtGrafoUnicursal,
             this.BtParesOrd,
             this.larguraToolStripMenuItem,
+            this.profundidadeToolStripMenuItem,
             this.aGMToolStripMenuItem,
             this.caminhoMinimoToolStripMenuItem});
             this.algoritmosToolStripMenuItem.Name = "algoritmosToolStripMenuItem";
@@ -159,6 +161,7 @@ namespace Editor_de_Grafos
             this.larguraToolStripMenuItem.Name = "larguraToolStripMenuItem";
             this.larguraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.larguraToolStripMenuItem.Text = "Largura";
+            this.larguraToolStripMenuItem.Click += new System.EventHandler(this.larguraToolStripMenuItem_Click);
             // 
             // aGMToolStripMenuItem
             // 
@@ -232,6 +235,13 @@ namespace Editor_de_Grafos
             this.SVFile.Filter = "Grafo Files|*.grf";
             this.SVFile.Title = "Defina local para salvar";
             // 
+            // profundidadeToolStripMenuItem
+            // 
+            this.profundidadeToolStripMenuItem.Name = "profundidadeToolStripMenuItem";
+            this.profundidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profundidadeToolStripMenuItem.Text = "Profundidade";
+            this.profundidadeToolStripMenuItem.Click += new System.EventHandler(this.profundidadeToolStripMenuItem_Click);
+            // 
             // g
             // 
             this.g.AutoScroll = true;
@@ -288,6 +298,7 @@ namespace Editor_de_Grafos
         private ToolStripMenuItem larguraToolStripMenuItem;
         private ToolStripMenuItem aGMToolStripMenuItem;
         private ToolStripMenuItem caminhoMinimoToolStripMenuItem;
+        private ToolStripMenuItem profundidadeToolStripMenuItem;
     }
 }
 

@@ -36,18 +36,53 @@ namespace Editor_de_Grafos
                 MessageBox.Show("O grafo não e Euleriano!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // IS UNICURSAL
+
         private void BtGrafoUnicursal_Click(object sender, EventArgs e)
         {
-            // IS UNICURSAL
-
+            
             if(g.isUnicursal())
                 MessageBox.Show("O grafo e Unicursal!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("O grafo não e Unicursal!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void BtBuscaProfundidade_Click(object sender, EventArgs e)
+        // PROFUNDIDADE
+
+        private void profundidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Vertice vertice = g.getVerticeMarcado();
+             
+
+            if (vertice != null)
+            {
+                g.profundidade(vertice.getNum());
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Vertice", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // COMPLETAR GRAFO
+
+        private void completarGrafoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            g.completarGrafo();
+        }
+
+        // LARGURA
+        private void larguraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vertice vertice = g.getVerticeMarcado();
+            if(vertice != null)
+            {
+                g.largura(vertice.getNum());
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Vertice", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         #endregion --------------------------------------------------------------------------------------------------
@@ -118,14 +153,12 @@ namespace Editor_de_Grafos
 
         #endregion --------------------------------------------------------------------------------------------------
 
-        private void completarGrafoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            g.completarGrafo();
-        }
-
+       
         private void Editor_Load(object sender, EventArgs e)
         {
 
         }
+
+    
     }
 }

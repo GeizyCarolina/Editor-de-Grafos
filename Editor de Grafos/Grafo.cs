@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace Editor_de_Grafos
@@ -9,6 +10,7 @@ namespace Editor_de_Grafos
     {
         Random aleatorio = new Random();
         private bool[] visitado;
+        private bool[] visitado2;
 
         public void AGM(int v)
         {
@@ -77,13 +79,48 @@ namespace Editor_de_Grafos
               
             else
               return false;
-            
-           
+                    
         }
+
+        // LARGURA
 
         public void largura(int v)
         {
+            visitado = new bool[getN()];
 
+            Fila fila = new Fila(getN());
+
+            fila.enfileirar(v);
+
+            visitado[v] = true;
+
+            
+            while (!fila.vazia()){
+
+                int d = fila.desenfileirar();
+
+                for (int i = 0; i < getN(); i++)
+			    {
+                    for (int j = 0; j < getN(); j++)
+                    {
+                        Aresta a = getAresta(i, j);
+
+                        if (getN() != 0 && !visitado[i])
+                        {                          
+                            visitado[i] = true;
+                            fila.enfileirar(i);
+                            getVertice(i).setCor(Color.Yellow);
+                                                       
+                        }
+                        if(a != null)
+                        {
+                            a.setCor(Color.Red);
+                        }
+                                            
+                    }
+                   
+			    }
+            }
         }
 
         public void numeroCromatico()
@@ -109,9 +146,40 @@ namespace Editor_de_Grafos
             msg += " }";
             return msg;
         }
+
+        // PROFUNDIDADE
+
         public void profundidade(int v)
         {
+            LimparProfundidade();
 
+            visitado2[v] = true;
+
+            for (int i = 0; i < getN(); i++)
+            {
+                // se I é adjacente a V e I ainda não foi visitado
+                if (getN() != 0 && !visitado[i])
+                {
+                    // chamada recursiva (vá para o vértice I)
+                    profundidade(i);
+                    getVertice(i).setCor(Color.Yellow);
+                    
+                }
+            }
+
+        }
+
+        public void LimparProfundidade()
+        {
+            visitado2 = new bool[getN()];
+
+            for (int i = 0; i < getN(); i++)
+            {
+                if(getN() != 0 && visitado2[i] == true)
+                {
+                    visitado2[i] = false;
+                }
+            }
         }
     }
 }
